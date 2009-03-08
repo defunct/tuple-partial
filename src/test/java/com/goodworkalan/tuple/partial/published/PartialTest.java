@@ -17,7 +17,11 @@ public class PartialTest
     @Test
     public void bucketed()
     {   
-        Partial<Triple<String, Integer, File>, Pair<String, Integer>> twoOfTriple
+        Partial<
+        Pair<String, Integer>
+        ,
+        Triple<String, Integer, File>
+        > twoOfTriple
             = Compare.twoOf(Compare.<String, Integer, File>triple());
         
         Comparable<Triple<String, Integer, File>> compare = twoOfTriple.compare(Tuple.from("A", 1));

@@ -36,10 +36,13 @@ import com.mallardsoft.tuple.Tuple;
  * 
  * @author Alan Gutierrez
  * 
- * @param <FullTuple> The full tuple to compare to.
+ * FIXME Flip the partial and full types to reflect the order in which they
+ * are used to create a comparator and update the documentation. 
+ * 
  * @param <PartialTuple> The partial tuple to match.
+ * @param <FullTuple> The full tuple to compare to.
  */
-public class Partial<FullTuple extends Tuple<?, ?>, PartialTuple extends Tuple<?, ?>>
+public class Partial<PartialTuple extends Tuple<?, ?>, FullTuple extends Tuple<?, ?>>
 {
     private ComparableServer<PartialTuple, FullTuple> comparableServer;
     

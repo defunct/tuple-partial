@@ -89,13 +89,13 @@ public class Compare
         B extends Comparable<B>,
         Rest extends Comparable<Rest>,
         FullTuple extends Tuple<A, Tuple<B, Rest>>>
-    Partial<FullTuple, Single<A>> oneOf(PartialType<FullTuple, A, Tuple<B, Rest>> typedefs)
+    Partial<Single<A>, FullTuple> oneOf(PartialType<FullTuple, A, Tuple<B, Rest>> typedefs)
     {
         ComparableServer<Tuple<A, End>, FullTuple> full =
             new CastFullComparableServer<Tuple<A, End>, Tuple<A, Tuple<B, Rest>>, FullTuple>(
                 new Ignore<B, Rest>().<A>shared());
         ComparableServer<Single<A>, FullTuple> partial = new CastPartialComparableServer<Tuple<A, End>, Single<A>, FullTuple>(full);
-        return new Partial<FullTuple, Single<A>>(partial);
+        return new Partial<Single<A>, FullTuple>(partial);
     }
 
     /**
@@ -125,13 +125,13 @@ public class Compare
         C extends Comparable<C>,
         Rest extends Comparable<Rest>,
         FullTuple extends Tuple<A, Tuple<B, Tuple<C, Rest>>>>
-    Partial<FullTuple, Pair<A, B>> twoOf(PartialType<FullTuple, A, Tuple<B, Tuple<C, Rest>>> typedefs)
+    Partial<Pair<A, B>, FullTuple> twoOf(PartialType<FullTuple, A, Tuple<B, Tuple<C, Rest>>> typedefs)
     {
         ComparableServer<Tuple<A, Tuple<B, End>>, FullTuple> full =
             new CastFullComparableServer<Tuple<A, Tuple<B, End>>, Tuple<A, Tuple<B, Tuple<C, Rest>>>, FullTuple>(
                 new Ignore<C, Rest>().<B>shared().<A>shared());
         ComparableServer<Pair<A, B>, FullTuple> partial = new CastPartialComparableServer<Tuple<A, Tuple<B, End>>, Pair<A, B>, FullTuple>(full);
-        return new Partial<FullTuple, Pair<A, B>>(partial);
+        return new Partial<Pair<A, B>, FullTuple>(partial);
     }
     
     /**
@@ -165,7 +165,7 @@ public class Compare
         D extends Comparable<D>,
         Rest extends Comparable<Rest>,
         FullTuple extends Tuple<A, Tuple<B, Tuple<C, Tuple<D, Rest>>>>>
-    Partial<FullTuple, Triple<A, B, C>> threeOf(PartialType<FullTuple, A, Tuple<B, Tuple<C, Tuple<D, Rest>>>> typedefs)
+    Partial<Triple<A, B, C>, FullTuple> threeOf(PartialType<FullTuple, A, Tuple<B, Tuple<C, Tuple<D, Rest>>>> typedefs)
     {
         ComparableServer<Tuple<A, Tuple<B, Tuple<C, End>>>, FullTuple> full =
             new CastFullComparableServer<
@@ -173,7 +173,7 @@ public class Compare
                 Tuple<A, Tuple<B, Tuple<C, Tuple<D, Rest>>>>, FullTuple>(
                 new Ignore<D, Rest>().<C>shared().<B>shared().<A>shared());
         ComparableServer<Triple<A, B, C>, FullTuple> partial = new CastPartialComparableServer<Tuple<A, Tuple<B, Tuple<C, End>>>, Triple<A, B, C>, FullTuple>(full);
-        return new Partial<FullTuple, Triple<A, B, C>>(partial);
+        return new Partial<Triple<A, B, C>, FullTuple>(partial);
     }
     
     /**
@@ -211,7 +211,7 @@ public class Compare
         E extends Comparable<E>,
         Rest extends Comparable<Rest>,
         FullTuple extends Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Rest>>>>>>
-    Partial<FullTuple, Quadruple<A, B, C, D>> fourOf(PartialType<FullTuple, A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Rest>>>>> typedefs)
+    Partial<Quadruple<A, B, C, D>, FullTuple> fourOf(PartialType<FullTuple, A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Rest>>>>> typedefs)
     {
         ComparableServer<Tuple<A, Tuple<B, Tuple<C, Tuple<D, End>>>>, FullTuple> full =
             new CastFullComparableServer<
@@ -219,7 +219,7 @@ public class Compare
                 Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Rest>>>>>, FullTuple>(
                 new Ignore<E, Rest>().<D>shared().<C>shared().<B>shared().<A>shared());
         ComparableServer<Quadruple<A, B, C, D>, FullTuple> partial = new CastPartialComparableServer<Tuple<A, Tuple<B, Tuple<C, Tuple<D, End>>>>, Quadruple<A, B, C, D>, FullTuple>(full);
-        return new Partial<FullTuple, Quadruple<A, B, C, D>>(partial);
+        return new Partial<Quadruple<A, B, C, D>, FullTuple>(partial);
     }
     
     /**
@@ -261,7 +261,7 @@ public class Compare
         F extends Comparable<F>,
         Rest extends Comparable<Rest>,
         FullTuple extends Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Rest>>>>>>>
-    Partial<FullTuple, Quintuple<A, B, C, D, E>> fiveOf(PartialType<FullTuple, A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Rest>>>>>> typedefs)
+    Partial<Quintuple<A, B, C, D, E>, FullTuple> fiveOf(PartialType<FullTuple, A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Rest>>>>>> typedefs)
     {
         ComparableServer<Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, End>>>>>, FullTuple> full =
             new CastFullComparableServer<
@@ -269,7 +269,7 @@ public class Compare
                 Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Rest>>>>>>, FullTuple>(
                 new Ignore<F, Rest>().<E>shared().<D>shared().<C>shared().<B>shared().<A>shared());
         ComparableServer<Quintuple<A, B, C, D, E>, FullTuple> partial = new CastPartialComparableServer<Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, End>>>>>, Quintuple<A, B, C, D, E>, FullTuple>(full);
-        return new Partial<FullTuple, Quintuple<A, B, C, D, E>>(partial);
+        return new Partial<Quintuple<A, B, C, D, E>, FullTuple>(partial);
     }
     
     /**
@@ -315,7 +315,7 @@ public class Compare
         G extends Comparable<G>,
         Rest extends Comparable<Rest>,
         FullTuple extends Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Rest>>>>>>>>
-    Partial<FullTuple, Sextuple<A, B, C, D, E, F>> sixOf(PartialType<FullTuple, A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Rest>>>>>>> typedefs)
+    Partial<Sextuple<A, B, C, D, E, F>, FullTuple> sixOf(PartialType<FullTuple, A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Rest>>>>>>> typedefs)
     {
         ComparableServer<Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, End>>>>>>, FullTuple> full =
             new CastFullComparableServer<
@@ -323,7 +323,7 @@ public class Compare
                 Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Rest>>>>>>>, FullTuple>(
                 new Ignore<G, Rest>().<F>shared().<E>shared().<D>shared().<C>shared().<B>shared().<A>shared());
         ComparableServer<Sextuple<A, B, C, D, E, F>, FullTuple> partial = new CastPartialComparableServer<Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, End>>>>>>, Sextuple<A, B, C, D, E, F>, FullTuple>(full);
-        return new Partial<FullTuple, Sextuple<A, B, C, D, E, F>>(partial);
+        return new Partial<Sextuple<A, B, C, D, E, F>, FullTuple>(partial);
     }
     
     /**
@@ -373,7 +373,7 @@ public class Compare
         H extends Comparable<H>,
         Rest extends Comparable<Rest>,
         FullTuple extends Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Tuple<H, Rest>>>>>>>>>
-    Partial<FullTuple, Septuple<A, B, C, D, E, F, G>> sevenOf(PartialType<FullTuple, A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Tuple<H, Rest>>>>>>>> typedefs)
+    Partial<Septuple<A, B, C, D, E, F, G>, FullTuple> sevenOf(PartialType<FullTuple, A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Tuple<H, Rest>>>>>>>> typedefs)
     {
         ComparableServer<Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, End>>>>>>>, FullTuple> full =
             new CastFullComparableServer<
@@ -381,7 +381,7 @@ public class Compare
                 Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Tuple<H, Rest>>>>>>>>, FullTuple>(
                 new Ignore<H, Rest>().<G>shared().<F>shared().<E>shared().<D>shared().<C>shared().<B>shared().<A>shared());
         ComparableServer<Septuple<A, B, C, D, E, F, G>, FullTuple> partial = new CastPartialComparableServer<Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, End>>>>>>>, Septuple<A, B, C, D, E, F, G>, FullTuple>(full);
-        return new Partial<FullTuple, Septuple<A, B, C, D, E, F, G>>(partial);
+        return new Partial<Septuple<A, B, C, D, E, F, G>, FullTuple>(partial);
     }
     
     /**
@@ -435,7 +435,7 @@ public class Compare
         I extends Comparable<I>,
         Rest extends Comparable<Rest>,
         FullTuple extends Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Tuple<H, Tuple<I, Rest>>>>>>>>>>
-    Partial<FullTuple, Octuple<A, B, C, D, E, F, G, H>> eightOf(PartialType<FullTuple, A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Tuple<H, Tuple<I, Rest>>>>>>>>> typedefs)
+    Partial<Octuple<A, B, C, D, E, F, G, H>, FullTuple> eightOf(PartialType<FullTuple, A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Tuple<H, Tuple<I, Rest>>>>>>>>> typedefs)
     {
         ComparableServer<Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Tuple<H, End>>>>>>>>, FullTuple> full =
             new CastFullComparableServer<
@@ -443,7 +443,7 @@ public class Compare
                 Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Tuple<H, Tuple<I, Rest>>>>>>>>>, FullTuple>(
                 new Ignore<I, Rest>().<H>shared().<G>shared().<F>shared().<E>shared().<D>shared().<C>shared().<B>shared().<A>shared());
         ComparableServer<Octuple<A, B, C, D, E, F, G, H>, FullTuple> partial = new CastPartialComparableServer<Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Tuple<H, End>>>>>>>>, Octuple<A, B, C, D, E, F, G, H>, FullTuple>(full);
-        return new Partial<FullTuple, Octuple<A, B, C, D, E, F, G, H>>(partial);
+        return new Partial<Octuple<A, B, C, D, E, F, G, H>, FullTuple>(partial);
     }
 
     /**
@@ -501,7 +501,7 @@ public class Compare
         J extends Comparable<J>,
         Rest extends Comparable<Rest>,
         FullTuple extends Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Tuple<H, Tuple<I, Tuple<J, Rest>>>>>>>>>>>
-    Partial<FullTuple, Nonuple<A, B, C, D, E, F, G, H, I>> nineOf(PartialType<FullTuple, A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Tuple<H, Tuple<I, Tuple<J, Rest>>>>>>>>>> typedefs)
+    Partial<Nonuple<A, B, C, D, E, F, G, H, I>, FullTuple> nineOf(PartialType<FullTuple, A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Tuple<H, Tuple<I, Tuple<J, Rest>>>>>>>>>> typedefs)
     {
         ComparableServer<Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Tuple<H, Tuple<I, End>>>>>>>>>, FullTuple> full =
             new CastFullComparableServer<
@@ -509,7 +509,7 @@ public class Compare
                 Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Tuple<H, Tuple<I, Tuple<J, Rest>>>>>>>>>>, FullTuple>(
                 new Ignore<J, Rest>().<I>shared().<H>shared().<G>shared().<F>shared().<E>shared().<D>shared().<C>shared().<B>shared().<A>shared());
         ComparableServer<Nonuple<A, B, C, D, E, F, G, H, I>, FullTuple> partial = new CastPartialComparableServer<Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Tuple<H, Tuple<I, End>>>>>>>>>, Nonuple<A, B, C, D, E, F, G, H, I>, FullTuple>(full);
-        return new Partial<FullTuple, Nonuple<A, B, C, D, E, F, G, H, I>>(partial);
+        return new Partial<Nonuple<A, B, C, D, E, F, G, H, I>, FullTuple>(partial);
     }
 
     /**

@@ -161,7 +161,7 @@ public class Compare
         B extends Comparable<B>,
         C extends Comparable<C>,
         D extends Comparable<D>,
-        Rest extends Comparable<Rest>,
+        Rest,
         FullTuple extends Tuple<A, Tuple<B, Tuple<C, Tuple<D, Rest>>>>>
     Partial<Triple<A, B, C>, FullTuple> threeOf(PartialType<FullTuple, A, Tuple<B, Tuple<C, Tuple<D, Rest>>>> typedefs)
     {
@@ -207,7 +207,7 @@ public class Compare
         C extends Comparable<C>,
         D extends Comparable<D>,
         E extends Comparable<E>,
-        Rest extends Comparable<Rest>,
+        Rest,
         FullTuple extends Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Rest>>>>>>
     Partial<Quadruple<A, B, C, D>, FullTuple> fourOf(PartialType<FullTuple, A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Rest>>>>> typedefs)
     {
@@ -257,7 +257,7 @@ public class Compare
         D extends Comparable<D>,
         E extends Comparable<E>,
         F extends Comparable<F>,
-        Rest extends Comparable<Rest>,
+        Rest,
         FullTuple extends Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Rest>>>>>>>
     Partial<Quintuple<A, B, C, D, E>, FullTuple> fiveOf(PartialType<FullTuple, A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Rest>>>>>> typedefs)
     {
@@ -311,7 +311,7 @@ public class Compare
         E extends Comparable<E>,
         F extends Comparable<F>,
         G extends Comparable<G>,
-        Rest extends Comparable<Rest>,
+        Rest,
         FullTuple extends Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Rest>>>>>>>>
     Partial<Sextuple<A, B, C, D, E, F>, FullTuple> sixOf(PartialType<FullTuple, A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Rest>>>>>>> typedefs)
     {
@@ -369,7 +369,7 @@ public class Compare
         F extends Comparable<F>,
         G extends Comparable<G>,
         H extends Comparable<H>,
-        Rest extends Comparable<Rest>,
+        Rest,
         FullTuple extends Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Tuple<H, Rest>>>>>>>>>
     Partial<Septuple<A, B, C, D, E, F, G>, FullTuple> sevenOf(PartialType<FullTuple, A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Tuple<H, Rest>>>>>>>> typedefs)
     {
@@ -431,7 +431,7 @@ public class Compare
         G extends Comparable<G>,
         H extends Comparable<H>,
         I extends Comparable<I>,
-        Rest extends Comparable<Rest>,
+        Rest,
         FullTuple extends Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Tuple<H, Tuple<I, Rest>>>>>>>>>>
     Partial<Octuple<A, B, C, D, E, F, G, H>, FullTuple> eightOf(PartialType<FullTuple, A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Tuple<H, Tuple<I, Rest>>>>>>>>> typedefs)
     {
@@ -497,7 +497,7 @@ public class Compare
         H extends Comparable<H>,
         I extends Comparable<I>,
         J extends Comparable<J>,
-        Rest extends Comparable<Rest>,
+        Rest,
         FullTuple extends Tuple<A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Tuple<H, Tuple<I, Tuple<J, Rest>>>>>>>>>>>
     Partial<Nonuple<A, B, C, D, E, F, G, H, I>, FullTuple> nineOf(PartialType<FullTuple, A, Tuple<B, Tuple<C, Tuple<D, Tuple<E, Tuple<F, Tuple<G, Tuple<H, Tuple<I, Tuple<J, Rest>>>>>>>>>> typedefs)
     {

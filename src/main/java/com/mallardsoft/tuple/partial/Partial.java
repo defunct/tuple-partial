@@ -1,4 +1,4 @@
-package com.goodworkalan.tuple.partial;
+package com.mallardsoft.tuple.partial;
 
 import com.mallardsoft.tuple.Tuple;
 
@@ -36,26 +36,26 @@ import com.mallardsoft.tuple.Tuple;
  * 
  * @author Alan Gutierrez
  * 
- * FIXME Flip the partial and full types to reflect the order in which they
- * are used to create a comparator and update the documentation. 
- * 
  * @param <PartialTuple> The partial tuple to match.
  * @param <FullTuple> The full tuple to compare to.
  */
 public class Partial<PartialTuple extends Tuple<?, ?>, FullTuple extends Tuple<?, ?>>
 {
+    // TODO Document.
     private ComparableServer<PartialTuple, FullTuple> comparableServer;
     
+    // TODO Document.
     Partial(ComparableServer<PartialTuple, FullTuple> comparableServer)
     {
         this.comparableServer = comparableServer;
     }
 
     /**
-     * Creates a <code>Comparable</code> that will compare the fields of
-     * the partial tuple against instances of the full tuple.
-     *
-     * @param partial An instance of the parital tuple.
+     * Creates a <code>Comparable</code> that will compare the fields of the
+     * partial tuple against instances of the full tuple.
+     * 
+     * @param partial
+     *            An instance of the parital tuple.
      * @return A comparable that will compare against the full tuple.
      */
     public Comparable<FullTuple> compare(PartialTuple partial)

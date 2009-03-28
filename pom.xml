@@ -3,17 +3,17 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.goodworkalan</groupId>
+    <groupId>com.mallardsoft</groupId>
     <artifactId>tuple-partial</artifactId>
     <packaging>jar</packaging>
-    <version>0.1.X</version>
+    <version>0.1.0</version>
 
     <name>tuple-partial</name>
     <description>Partial ordering of Java Tuple tuples.</description>
 
     <organization>
-        <name>Alan Gutierrez</name>
-        <url>http://blogometer.com/</url>
+        <name>Mallardsoft</name>
+        <url>http://mallardsoft.com/</url>
     </organization>
 
     <licenses>
@@ -23,6 +23,13 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+
+    <repositories>
+        <repository>
+            <id>mallardsoft</id>
+            <url>http://mallardsoft/m2/repository</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>

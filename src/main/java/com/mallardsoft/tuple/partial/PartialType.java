@@ -1,4 +1,4 @@
-package com.goodworkalan.tuple.partial;
+package com.mallardsoft.tuple.partial;
 
 import com.mallardsoft.tuple.Tuple;
 
@@ -21,6 +21,6 @@ import com.mallardsoft.tuple.Tuple;
 public class PartialType<
     Named extends Tuple<First, PartialRest>,
     First extends Comparable<First>,
-    PartialRest extends Comparable<PartialRest>>
+    PartialRest>
 {
 }

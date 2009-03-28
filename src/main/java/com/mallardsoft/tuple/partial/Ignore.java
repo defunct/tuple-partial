@@ -1,4 +1,4 @@
-package com.goodworkalan.tuple.partial;
+package com.mallardsoft.tuple.partial;
 
 import com.mallardsoft.tuple.End;
 import com.mallardsoft.tuple.Tuple;
@@ -21,7 +21,7 @@ import com.mallardsoft.tuple.Tuple;
  * @param <Rest>
  *            The remainder of the type tree.
  */
-public class Ignore<First extends Comparable<First>, Rest extends Comparable<Rest>>
+public class Ignore<First extends Comparable<First>, Rest>
         implements ComparableServer<End, Tuple<First, Rest>>,
         Comparable<Tuple<First, Rest>>
 {

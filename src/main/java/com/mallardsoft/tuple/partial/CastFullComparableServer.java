@@ -1,15 +1,19 @@
-package com.goodworkalan.tuple.partial;
+package com.mallardsoft.tuple.partial;
 
-class CastFullComparableServer<PartialRest, Rest extends Comparable<Rest>, Struct extends Rest>
+// TODO Document.
+class CastFullComparableServer<PartialRest, Rest, Struct extends Rest>
 implements ComparableServer<PartialRest, Struct>
 {
+    // TODO Document.
     private final ComparableServer<PartialRest, Rest> delegate;
     
+    // TODO Document.
     public CastFullComparableServer(ComparableServer<PartialRest, Rest> delegate)
     {
         this.delegate = delegate;
     }
     
+    // TODO Document.
     public Comparable<Struct> comparable(PartialRest partial)
     {
         final Comparable<Rest> comparable = delegate.comparable(partial);

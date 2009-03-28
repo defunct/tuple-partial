@@ -1,4 +1,4 @@
-package com.goodworkalan.tuple.partial;
+package com.mallardsoft.tuple.partial;
 
 import com.mallardsoft.tuple.Tuple;
 import com.mallardsoft.tuple.Variable;
@@ -24,12 +24,14 @@ import com.mallardsoft.tuple.Variable;
  *            The remainder of the tree-like type structure in the full tuple.
  */
 public class Shared<First extends Comparable<First>,
-                    PartialRest extends Comparable<PartialRest>,
-                    Rest extends Comparable<Rest>>
+                    PartialRest,
+                    Rest>
 implements ComparableServer<Tuple<First, PartialRest>, Tuple<First, Rest>>
 {
+    // TODO Document.
     ComparableServer<PartialRest, Rest> newComparable;
     
+    // TODO Document.
     Shared(ComparableServer<PartialRest, Rest> newComparable)
     {
         this.newComparable = newComparable;

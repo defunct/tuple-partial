@@ -1,4 +1,4 @@
-package com.goodworkalan.tuple.partial;
+package com.mallardsoft.tuple.partial;
 
 import com.mallardsoft.tuple.Decuple;
 import com.mallardsoft.tuple.End;
@@ -87,13 +87,11 @@ public class Compare
     public static <
         A extends Comparable<A>,
         B extends Comparable<B>,
-        Rest extends Comparable<Rest>,
+        Rest,
         FullTuple extends Tuple<A, Tuple<B, Rest>>>
     Partial<Single<A>, FullTuple> oneOf(PartialType<FullTuple, A, Tuple<B, Rest>> typedefs)
     {
-        ComparableServer<Tuple<A, End>, FullTuple> full =
-            new CastFullComparableServer<Tuple<A, End>, Tuple<A, Tuple<B, Rest>>, FullTuple>(
-                new Ignore<B, Rest>().<A>shared());
+        ComparableServer<Tuple<A, End>, FullTuple> full = new CastFullComparableServer<Tuple<A, End>, Tuple<A, Tuple<B, Rest>>, FullTuple>(new Ignore<B, Rest>().<A>shared());
         ComparableServer<Single<A>, FullTuple> partial = new CastPartialComparableServer<Tuple<A, End>, Single<A>, FullTuple>(full);
         return new Partial<Single<A>, FullTuple>(partial);
     }
@@ -123,7 +121,7 @@ public class Compare
         A extends Comparable<A>,
         B extends Comparable<B>,
         C extends Comparable<C>,
-        Rest extends Comparable<Rest>,
+        Rest,
         FullTuple extends Tuple<A, Tuple<B, Tuple<C, Rest>>>>
     Partial<Pair<A, B>, FullTuple> twoOf(PartialType<FullTuple, A, Tuple<B, Tuple<C, Rest>>> typedefs)
     {

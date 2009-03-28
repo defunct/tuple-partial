@@ -1,4 +1,4 @@
-package com.goodworkalan.tuple.partial.published;
+package com.mallardsoft.tuple.partial.published;
 
 import static org.testng.Assert.assertEquals;
 
@@ -6,11 +6,11 @@ import java.io.File;
 
 import org.testng.annotations.Test;
 
-import com.goodworkalan.tuple.partial.Compare;
-import com.goodworkalan.tuple.partial.Partial;
 import com.mallardsoft.tuple.Pair;
 import com.mallardsoft.tuple.Triple;
 import com.mallardsoft.tuple.Tuple;
+import com.mallardsoft.tuple.partial.Compare;
+import com.mallardsoft.tuple.partial.Partial;
 
 public class PartialTest
 {
